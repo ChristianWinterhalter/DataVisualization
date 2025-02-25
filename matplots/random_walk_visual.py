@@ -22,24 +22,9 @@ ax.scatter(0, 0, c='yellow', edgecolors='none', s=100)
 ax.scatter(rw.x_values[-1], rw.y_values[-1], c='red', edgecolors='none',
            s=100)
 
-line = ax.plot(rw.x_values, rw.y_values)
+#line = ax.plot(rw.x_values, rw.y_values)
 
 ax.get_xaxis().set_visible(False)
 ax.get_yaxis().set_visible(False)
-#plt.show()
-
-
-def update(frame):
-    # for each frame, update the data stored on each artist.
-    x = t[:frame]
-    y = t[:frame]
-    # update the scatter plot
-    data = np.stack([x, y]).T
-    scatter.set_offsets(data)
-    # update the line plot
-
-    return scatter, line
-
-
-ani = animation.FuncAnimation(fig=fig, func=update, frames=40, interval=30)
 plt.show()
+
